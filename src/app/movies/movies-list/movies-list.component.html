@@ -1,0 +1,54 @@
+<!-- <p>movies-list works!</p> -->
+
+
+<!-- <img *ngIf="!movie" src="./../assets/images/loading01.gif"> -->
+
+
+
+<!-- <h1>Movie Data</h1>
+<div>{{movie.title | lowercase}}</div>
+<div>{{movie.releaseDate | date:"dd-MMMM-yyyy" | uppercase}}</div>
+<div>{{movie.price | currency}}</div> -->
+
+<!-- <div *ngIf="movie?.length===0" >No Record found</div> -->
+<!-- <img *ngIf="!moviesInTheaters" src="./../assets/images/loading01.gif"> -->
+<!-- <h1>List of Movies</h1> -->
+<!-- <div *ngIf="movies?.length===0" >No Record found</div>
+
+<div *ngIf="movies && movies.length>0">
+
+<ng-container *ngFor="let movie of movies; let index=index;" class="movie-container">
+<div>{{index}}) {{movie.title | lowercase}}
+  <div><button style="margin-left:10rem;" (click)="remove(index);" >Remove</button></div>
+</div>
+
+<div>{{movie.releaseDate | date:"dd-MMMM-yyyy" | uppercase}}</div>
+<div>{{movie.price | currency}}</div>
+</ng-container>
+
+</div> -->
+<div *ngIf="movies?.length===0" >No Record found</div>
+
+<app-generic-list list="[movies]">
+  <ng-container content>
+    <div
+    *ngFor="let movie of movies; let index = index"
+    class="movie-container"
+  >
+    <div>
+      <h2>{{ index }}) {{ movie.title | lowercase }}</h2>
+      <button style="margin-left: 1rem" (click)="remove(index)">
+        Remove
+      </button>
+    </div>
+    <div>
+      {{ movie.releaseDate | date: "dd-MMMM-yyyy" | uppercase }}
+    </div>
+    <div>
+      {{ movie.price | currency }}
+    </div>
+  </div>
+
+  </ng-container>
+</app-generic-list>
+
