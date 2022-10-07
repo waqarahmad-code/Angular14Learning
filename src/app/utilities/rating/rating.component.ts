@@ -26,6 +26,7 @@ export class RatingComponent implements OnInit {
 
   handleMouseEnter(index: number){
     this.selectedRate = index + 1;
+
   }
 
   handleMouseLeave(){
