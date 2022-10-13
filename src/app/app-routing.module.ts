@@ -12,24 +12,22 @@ import { EditMoviesTheatersComponent } from './movies-theaters/edit-movies-theat
 import { IndexMovieTheaterComponent } from './movies-theaters/index-movie-theater/index-movie-theater.component';
 import { CreateMovieComponent } from './movies/create-movie/create-movie.component';
 import { EditMoviesComponent } from './movies/edit-movies/edit-movies.component';
+import { MoviesFilterComponent } from './movies/movies-filter/movies-filter.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'genres', component: IndexGenresComponent},
   {path: 'genres/create', component: CreateGenreComponent},
   {path: 'genres/edit/:id', component: EditGenreComponent},
-
   {path: 'actors', component: IndexActorComponent},
   {path: 'actors/create', component: CreateActorComponent},
   {path: 'actors/edit/:id', component: EditActorComponent},
   {path: 'movietheaters', component: IndexMovieTheaterComponent},
   {path: 'movietheaters/create', component: CreateMovieTheaterComponent},
   {path: 'movietheaters/edit/:id', component: EditMoviesTheatersComponent},
-
   {path: 'movies/create', component: CreateMovieComponent},
   {path: 'movies/edit/:id', component: EditMoviesComponent},
-
- // {path: '**', component: HomeComponent},
+  {path: 'movies/filter', component: MoviesFilterComponent},
   {path: '**', redirectTo: ''}
 
 ];
