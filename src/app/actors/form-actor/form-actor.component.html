@@ -1,4 +1,4 @@
-<form  [formGroup]="form">
+<form  (submit)="saveChanges()" [formGroup]="form">
   <mat-form-field appearance="outline">
       <mat-label>Name*</mat-label>
       <input formControlName="name" matInput />
@@ -10,3 +10,10 @@
       <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
       <mat-datepicker #picker></mat-datepicker>
   </mat-form-field>
+
+  <app-input-img></app-input-img>
+  <div>
+    <button mat-flat-button color="primary" [disabled]="form.invalid">Save Changes</button>
+    <a mat-stroked-button routerLink="/actors">Cancel</a>
+</div>
+</form>

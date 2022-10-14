@@ -1,0 +1,4 @@
+<div>
+  <button type="text" mat-raised-button (click)="fileInput.click()">Select</button>
+  <input type="file" hidden #fileInput accept="image/png,image/jpeg" (change)="change($event)"/>
+</div>
