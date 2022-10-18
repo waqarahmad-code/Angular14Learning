@@ -1,4 +1,4 @@
-<form  (submit)="saveChanges()" [formGroup]="form">
+<form (submit)="saveChanges()" [formGroup]="form">
   <mat-form-field appearance="outline">
       <mat-label>Name*</mat-label>
       <input formControlName="name" matInput />
@@ -11,9 +11,20 @@
       <mat-datepicker #picker></mat-datepicker>
   </mat-form-field>
 
-  <app-input-img></app-input-img>
+  <h4>Select Picture</h4>
+
+  <app-input-img
+  [urlCurrentImage]="model?.picture"
+  (onImageSelected)="onImageSelected($event)"></app-input-img>
+
+  <h4>Biography</h4>
+
+  <app-input-markdown
+  [markdownContent]="model?.biography"
+  (changeMarkdown)="changeMarkdown($event)"></app-input-markdown>
+
   <div>
-    <button mat-flat-button color="primary" [disabled]="form.invalid">Save Changes</button>
-    <a mat-stroked-button routerLink="/actors">Cancel</a>
-</div>
+      <button mat-flat-button color="primary" [disabled]="form.invalid">Save Changes</button>
+      <a mat-stroked-button routerLink="/actors">Cancel</a>
+  </div>
 </form>
