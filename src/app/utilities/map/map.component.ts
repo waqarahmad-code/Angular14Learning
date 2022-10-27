@@ -24,10 +24,10 @@ export class MapComponent implements OnInit {
   options = {
     layers: [
       tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        maxZoom: 18,
+        maxZoom: 5,
       attribution: 'Angular Movies' })
     ],
-    zoom: 14,
+    zoom: 5,
     center: latLng(34.33833342464723,  433.08105468750006)
   };
 

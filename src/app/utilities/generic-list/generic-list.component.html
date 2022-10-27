@@ -1,5 +1,3 @@
-
-
 <div *ngIf="!list">
   <span #loading>
       <ng-content select="[loading]"></ng-content>
@@ -11,8 +9,15 @@
   </span>
 </div>
 
+<div *ngIf="list?.length === 0">
+  <span #empty>
+      <ng-content select="[empty]"></ng-content>
+  </span>
+  <span *ngIf="!empty.innerHTML.trim()">
+      There are no records to display
+  </span>
+</div>
 
-
-<ng-container *ngIf="list?.length>0">
-  <ng-content select="[content]"></ng-content>
+<ng-container *ngIf="list && list.length > 0">
+<ng-content select="[content]"></ng-content>
 </ng-container>
